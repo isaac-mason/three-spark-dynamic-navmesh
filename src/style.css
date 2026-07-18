@@ -1,0 +1,44 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+    font-family: system-ui, sans-serif;
+    background: #d6d6d6;
+}
+
+#app canvas {
+    display: block;
+}
+
+/* HUD hints + loading indicator — plain overlays, non-interactive. */
+#hud,
+#loading {
+    position: fixed;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 13px;
+    line-height: 1.7;
+    pointer-events: none;
+    user-select: none;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+#hud {
+    bottom: 16px;
+    left: 16px;
+}
+
+#loading {
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: opacity 0.4s ease;
+}
+
+#loading.hidden {
+    opacity: 0;
+}
